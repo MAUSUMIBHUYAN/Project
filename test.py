@@ -32,3 +32,18 @@ def filtering(matrix):
         recommendations[userindex] = topindices.tolist()
 
         return recommendations
+
+bookrecommendations = filtering(bookmatrix)
+musicrecommendations = filtering(musicmatrix)
+print("Book recommendations for user :")
+for bookid in bookrecommendations[1]:
+    booktitle=book.loc[books['bookid'] == bookid,'title'].value[0]
+    print(booktitle)
+
+
+print("\nMusic recommendations for user 1:")
+for musicid in musicrecommendations[1]:
+    musictitle = music.loc[music['musicid'] == musicid,'title'].value[0]
+    print(musictitle)
+
+
