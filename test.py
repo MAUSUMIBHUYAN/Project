@@ -12,7 +12,7 @@ musicratings = pd.merge(ratings,books,on='musicid')
 bookmatrix = bookratings.pivot_table(index='userid',columns='bookid',values='rating').fillna(0)
 musicmatrix = musicratings.pivot_table(index='userid',columns='musicid',values='rating').fillna(0)
 
-def collaborativefiltering(matrix):
+def filtering(matrix):
     similaritymatrix=cosine_similarity(matrix,dense_output=True)
     recommendations = {}
     for userindex,userrows in enumerate(matrix):
