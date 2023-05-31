@@ -141,10 +141,28 @@ def blackjack_game(deck):
          
         input()
         
-        #randomly dealing 
+        #randomly dealing a card
+        dealer_card= random.choice(deck)
+        dealer_cards.append(dealer_card)
+        deck.remove(dealer_card)
 
-        print('hello')
-        jhg
+        #updating the dealer score
+        dealer_score+=dealer_card.card_value
+
+        #print dealer cards and score , keeping in mind to hide the second card and score
+        print("DEALER CARDS:")      
+        if len(dealer_cards)==1:
+              print_cards(dealer_cards,False)
+              print("DEALER SCORE=",dealer_score)
+        else :
+              print_cards(dealer_cards[:-1],True)
+              print("DEALER SCORE=",dealer_score-dealer_cards[-1].card_value)
+
+        # in case both the cards are Ace,make the second ace value as 1
+        if len(dealer_cards==2)
+              if  dealer_cards[0].card_value ==11 and dealer_cards[1].card_value == 11:
+                  dealer_cards[1]
+        
               
     
     
