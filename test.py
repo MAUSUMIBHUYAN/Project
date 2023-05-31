@@ -1,4 +1,17 @@
-
+import random
+import os
+import time
+#defining the card class
+class Card:
+    def __init__(self,shape,value,Cardvalue):
+        # shape of the card 
+        self.shape = shape
+        # representing value of the card
+        self.value = value
+        # Cardvalue of the card
+        self.Cardvalue = Cardvalue
+def clear_terminal():
+    os.system("clear terminal")
 def print(cards,conceal):
     c = ""
     for i in cards:
@@ -115,7 +128,7 @@ def blackjack_game(deck):
     player_score=[]
     trader_score=[]
     
-    clear()
+    clear_terminal()
     
     #condition for the trading the card
     while len(player_cards)<2:
@@ -126,12 +139,12 @@ def blackjack_game(deck):
         deck.remove(player_card)
         
         #to update the total scores of the player
-        player_score= player_score + player_card.card_value
+        player_score= player_score + player_card.Cardvalue
         
         #in case both the cards are Ace, make the first ace value as 1
         if len(player_cards)==2:
-               if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
-                    player_cards[0].card_value=1
+               if player_cards[0].Cardvalue == 11 and player_cards[1].Cardvalue == 11:
+                    player_cards[0].Cardvalue=1
                     player_score -= 10
                     
         # print players cards and score
@@ -147,7 +160,7 @@ def blackjack_game(deck):
         deck.remove(trader_card)
 
         # to update the total scores of the trader
-        trader_score= trader_score+trader_card.card_value
+        trader_score= trader_score+trader_card.Cardvalue
 
         #to print the scores and cards of the trader
         print("TRADER'S CARDS:")      
@@ -156,12 +169,12 @@ def blackjack_game(deck):
               print("THE TRADER'S SCORE IS=",trader_score)
         else :
               print_cards(trader_cards[:-1],True)
-              print("THE TRADER'S SCORE IS=",trader_score-trader_cards[-1].card_value)
+              print("THE TRADER'S SCORE IS=",trader_score-trader_cards[-1].Card_value)
 
         # in case both the cards are Ace,make the second ace value as 1
-        if len(trader_cards==2)
-              if  trader_cards[0].card_value ==11 and trader_cards[1].card_value == 11:
-                  trader_cards[1].card_value = 1
+        if len(trader_cards==2):
+              if  trader_cards[0].Cardvalue ==11 and trader_cards[1].Cardvalue == 11:
+                  trader_cards[1].Cardvalue = 1
                   trader_score = trader_score+10
 
         input()
@@ -170,12 +183,12 @@ def blackjack_game(deck):
         print("PLAYER GOT THE BLACKJACK!!!!") 
         print("PLAYER WINS!!!")
         quit()
-    clear()
+    clear_terminal()
 
     # to print the player and trader cards
     print("TRADER CARDS ARE:")
     print_cards(trader_cards[:-1], True)
-    print("TRADER'S SCORE=" , trader_score-trader_cards[-1].card_value)
+    print("TRADER'S SCORE=" , trader_score-trader_cards[-1].Cardvalue)
 
     print()
 
@@ -188,8 +201,8 @@ def blackjack_game(deck):
         option = input("ENTER H for HIT or S for STAND:")
 
         if len(option)!=1 or (option.upper() != 'H' and option.upper()!= 'S'):
-             clear()
-             print ("INVALID INPUT")
+            clear_terminal()
+            print ("INVALID INPUT")
 
         # IF THE PERSON CHOOSES HIT(H)
         if option.upper()== 'H':
@@ -200,7 +213,7 @@ def blackjack_game(deck):
             deck.remove(player_card)
 
             #TO ADD UP THE PREVIOUS SCORES
-            player_score= player_score+ player_card.card_value
+            player_score= player_score+ player_card.Cardvalue
 
             #IF AT ALL THE PLAYER HAS AN ACE CARD WE NEED TO UPDATE THE PLAYER'S SCORE
             m=0
