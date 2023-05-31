@@ -103,6 +103,8 @@ def print(cards,conceal):
         c += "\t|________________|"
     print(c)   
     print()
+    # function for a single game of blackjack
+    def blackjack_game
     
 
 
