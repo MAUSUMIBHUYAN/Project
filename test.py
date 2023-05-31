@@ -102,7 +102,8 @@ def print(cards,conceal):
     if conceal:
         c += "\t|________________|"
     print(c)   
-    print()                  
+    print()
+    abcdefgidhjddjvn
 
 
                 
