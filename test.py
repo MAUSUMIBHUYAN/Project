@@ -103,7 +103,7 @@ def print(cards,conceal):
         c += "\t|________________|"
     print(c)   
     print()
-    abcdefgidhjddjvn
+    
 
 
                 
