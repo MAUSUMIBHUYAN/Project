@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 def print(cards,conceal):
     c = ""
     for i in cards:
@@ -106,27 +105,28 @@ def print(cards,conceal):
     print(c)   
     print()
     
-    # function for a single game of blackjack
+    # creating a function for the blackjack game (single person)
 def blackjack_game(deck):
-    #cards for both dealer and player
+    #cards for both trader and player
     player_cards=[]
-    dealer_cards=[]
+    trader_cards=[]
     
-    #Scores for both dealer and player
+    # to write the total Scores for player and trader
     player_score=[]
-    dealer_score=[]
+    trader_score=[]
     
     clear()
     
-    #initial dealing for player and dealer 
+    #condition for the trading the card
     while len(player_cards)<2:
-        #randomly dealing a card
+
+        #choosing any card
         player_card=random.choice(deck)
-        player-cards.append(player_card)
+        player_cards.append(player_card)
         deck.remove(player_card)
         
-        #updating the player score
-        player_score+= player_card.card_value
+        #to update the total scores of the player
+        player_score= player_score + player_card.card_value
         
         #in case both the cards are Ace, make the first ace value as 1
         if len(player_cards)==2:
@@ -141,28 +141,72 @@ def blackjack_game(deck):
          
         input()
         
-        #randomly dealing a card
-        dealer_card= random.choice(deck)
-        dealer_cards.append(dealer_card)
-        deck.remove(dealer_card)
+        #choosing any card
+        trader_card= random.choice(deck)
+        trader_cards.append(trader_card)
+        deck.remove(trader_card)
 
-        #updating the dealer score
-        dealer_score+=dealer_card.card_value
+        # to update the total scores of the trader
+        trader_score= trader_score+trader_card.card_value
 
-        #print dealer cards and score , keeping in mind to hide the second card and score
-        print("DEALER CARDS:")      
-        if len(dealer_cards)==1:
-              print_cards(dealer_cards,False)
-              print("DEALER SCORE=",dealer_score)
+        #to print the scores and cards of the trader
+        print("TRADER'S CARDS:")      
+        if len(trader_cards)==1:
+              print_cards(trader_cards,False)
+              print("THE TRADER'S SCORE IS=",trader_score)
         else :
-              print_cards(dealer_cards[:-1],True)
-              print("DEALER SCORE=",dealer_score-dealer_cards[-1].card_value)
+              print_cards(trader_cards[:-1],True)
+              print("THE TRADER'S SCORE IS=",trader_score-trader_cards[-1].card_value)
 
         # in case both the cards are Ace,make the second ace value as 1
-        if len(dealer_cards==2)
-              if  dealer_cards[0].card_value ==11 and dealer_cards[1].card_value == 11:
-                  dealer_cards[1]
-        
+        if len(trader_cards==2)
+              if  trader_cards[0].card_value ==11 and trader_cards[1].card_value == 11:
+                  trader_cards[1].card_value = 1
+                  trader_score = trader_score+10
+
+        input()
+    #  necessary condition for the player to get blackjack
+    if player_score ==21:
+        print("PLAYER GOT THE BLACKJACK!!!!") 
+        print("PLAYER WINS!!!")
+        quit()
+    clear()
+
+    # to print the player and trader cards
+    print("TRADER CARDS ARE:")
+    print_cards(trader_cards[:-1], True)
+    print("TRADER'S SCORE=" , trader_score-trader_cards[-1].card_value)
+
+    print()
+
+    print("PLAYER CARDS ARE:")
+    print_cards(player_cards, False)
+    print("PLAYER'S SCORE:", player_score)
+
+    #to control the players and traders moves
+    while player_score <21:
+        option = input("ENTER H for HIT or S for STAND:")
+
+        if len(option)!=1 or (option.upper() != 'H' and option.upper()!= 'S'):
+             clear()
+             print ("INVALID INPUT")
+
+        # IF THE PERSON CHOOSES HIT(H)
+        if option.upper()== 'H':
+
+            #IF WE HAVE A NEW CARD
+            player_card = random.option(deck)
+            player_cards.append(player_card)
+            deck.remove(player_card)
+
+            #TO ADD UP THE PREVIOUS SCORES
+            player_score= player_score+ player_card.card_value
+
+            #IF AT ALL THE PLAYER HAS AN ACE CARD WE NEED TO UPDATE THE PLAYER'S SCORE
+            m=0
+            while player_score>21 and m<len(player_cards):
+                 
+                                                                   
               
     
     
