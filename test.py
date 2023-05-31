@@ -217,6 +217,3 @@ def blackjack_game(deck):
 
 
 
-
-
->>>>>>> 6d8e3a08b157c6033d2628b90b34bcbc39ed5e19
