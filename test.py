@@ -142,6 +142,8 @@ def blackjack_game(deck):
         input()
         
         #randomly dealing 
+
+        print('hello')
         
               
     
