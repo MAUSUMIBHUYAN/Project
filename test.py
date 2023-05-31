@@ -144,7 +144,7 @@ def blackjack_game(deck):
         #randomly dealing 
 
         print('hello')
-        
+        jhg
               
     
     
