@@ -147,6 +147,8 @@ while True:
 
         if player_have.value > 21:
             player_lose(player_have, opponent_have, player_bet)
+        if opponent_have.value > 21:
+            opponent_lose(player_have , opponent_have, player_bet)
     if player_have.value <= 21:
         while opponent_have.value < 17:
             hit(deck, opponent_have)
