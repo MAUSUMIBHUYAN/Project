@@ -44,13 +44,7 @@ class Have: #shows all the cards that the player and the opponent have
     def add_card(self, card): #add a card to the player as well as the opponent
         self.cards.append(card)
         self.value += values[card.rank] #calculating the values of the cards
-        if card.rank == 'Ace':
-            self.aces += 1
-
-    def ace(self):#if the sum is really close to 21 we'll just adjust make the ace turn into 1
-        while self.value > 21 and self.aces:
-            self.value -= 10
-            self.aces -= 1
+    
 class Bets: # to keep track of all the bets 
     def __init__(self):
         #when the user lost their bet,the amount they bet was taken away from the self.total
@@ -77,7 +71,6 @@ def take_the_bet(amount):
                 break
 def hit(deck, have):
     have.add_card(deck.pick())
-    have.ace()#in case the card is an ace
 
 def hit_or_stand(deck, have):
     global playing#making it available  in the function
