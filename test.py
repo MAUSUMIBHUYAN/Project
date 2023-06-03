@@ -33,17 +33,16 @@ class Cards: #creates all the cards
             'Queen':'Q',
             'King':'K'
         } 
-        card_art = {
+        card_art = [
 
             '┌─────────┐',
-
-            f'│ {rank_symbols[self.rank]:<2}      │',
-            '│         │',
-            f'│    {symbols[self.shape]:<1}    │',
-            '│         │',
-            f'│      {rank_symbols[self.rank]:>2}│',
-            '└─────────┘'
-        }
+             f'│ {rank_symbols[self.rank]:<2}      │',
+             '│         │',
+             f'│    {symbols[self.shape]:<1}    │',
+             '│         │',
+             f'│      {rank_symbols[self.rank]:>2} │',
+             '└─────────┘'
+        ]
         
         return '\n'.join(card_art)
 class Deck:#create a deck of cards
@@ -143,16 +142,20 @@ def show_card(player, opponent):
 #game endings
 def player_lose(player, opponent, amount):
     print("OHH,YOU LOST THE GAME!")
+    print("Player total value:", player.value)
+    print("Opponent total value:", opponent.value)
     amount.lost_the_bet()
 def player_win(player, opponent, amount):
     print("BRAVO,YOU WON THE GAME!")
     amount.win_the_bet()
 def opponent_lose(player, opponent, amount):
-    print("OHH,YOU LOST THE GAME!")
-    amount.lost_the_bet()
-def opponent_win(player, opponent, amount):
-    print("BRAVO,YOU WON THE GAME!")
+    print("BRAVO,OPPONENT LOST THE GAME!")
     amount.win_the_bet()
+def opponent_win(player, opponent, amount):
+    print("OHH,OPPONENT WON THE GAME!")
+    print("Player total value:", player.value)
+    print("Opponent total value:", opponent.value)
+    amount.lost_the_bet()
 
 def Tie(player, opponent):#if the player and the opponent tie
     print("Its a tie!")
@@ -202,6 +205,9 @@ while True:
             Tie(player_have, opponent_have)    
     
     print("\nPlayer's winnings stand at", player_bet.total)
+    #show the hidden card
+    print("\nHidden card of the opponent:")
+    print(opponent_have.cards[0])
 
     new_game = input("Would you like to play again?")
     if new_game.lower() == 'yes':
