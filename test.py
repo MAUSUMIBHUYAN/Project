@@ -12,7 +12,40 @@ class Cards: #creates all the cards
         self.shape = shape
         self.rank = rank
     def __str__(self):
-        return self.rank + ' of ' + self.shape# return like Queen of hearts
+        symbols = {
+            'Spades': '♠',
+            'Diamonds': '♦',
+            'Hearts': '♥',
+            'Clubs': '♣'
+        }
+        rank_symbols = {
+            '2':'2',
+            '3':'3',
+            '4':'4',
+            '5':'5',
+            '6':'6',
+            '7':'7',
+            '8':'8',
+            '9':'9',
+            '10':'10',
+            'Ace':'A',
+            'Jack':'J',
+            'Queen':'Q',
+            'King':'K'
+        } 
+        card_art = {
+
+            '┌─────────┐',
+
+            f'│ {rank_symbols[self.rank]:<2}      │',
+            '│         │',
+            f'│    {symbols[self.shape]:<1}    │',
+            '│         │',
+            f'│      {rank_symbols[self.rank]:>2}│',
+            '└─────────┘'
+        }
+        
+        return '\n'.join(card_art)
 class Deck:#create a deck of cards
     def __init__(self):
         self.deck = [] # haven't created a deck
@@ -33,14 +66,13 @@ class Deck:#create a deck of cards
         #pop means takeoff the lastvalue from a list or a string        
         pickout_card = self.deck.pop()#the pickout card is going to be the card that is popped off from the end of the deck
         return pickout_card
-test = Deck()
-print(test)
+
 
 class Have: #shows all the cards that the player and the opponent have 
     def __init__(self):
         self.cards = []
         self.value = 0
-        self.aces = 0 #keep track of aces
+        
     def add_card(self, card): #add a card to the player as well as the opponent
         self.cards.append(card)
         self.value += values[card.rank] #calculating the values of the cards
@@ -91,14 +123,22 @@ def hit_or_stand(deck, have):
 def show_the_card(player, opponent):
     print("\nOpponent have: ")
     print("card is hidden")
-    print("",opponent.cards[1])
-    print("\nplayer have: ", *player.cards, sep='\n')#separate the cards together and separate it with new line
-    
+    print(opponent.cards[1])
+    print("\nplayer has: ")#separate the cards together and separate it with new line
+    for i ,card in enumerate(player.cards, start=1):
+        print("card {}{}".format(str(i)+':'+'\n',card))
+
 def show_card(player, opponent):
-    print("\nOpponent have: ", *opponent.cards, sep='\n')
-    print("Opponent have=", opponent.value)
-    print("\nPlayer have: ", *player.cards, sep='\n')
-    print("Player have=", player.value)
+    print("\nOpponent have: ")
+    for i ,card in enumerate(opponent.cards, start=1):
+        print("card {}{}".format(str(i)+':'+'\n',card))
+    print("Opponent total value:",opponent.value)
+        
+
+    print("\nPlayer has:")
+    for i ,card in enumerate(player.cards, start=1):
+        print("card {}{}".format(str(i)+':'+'\n',card))
+    print("Player total value:", player.value)
 
 #game endings
 def player_lose(player, opponent, amount):
@@ -147,21 +187,19 @@ while True:
 
         if player_have.value > 21:
             player_lose(player_have, opponent_have, player_bet)
-        if opponent_have.value > 21:
-            opponent_lose(player_have , opponent_have, player_bet)
+            break
     if player_have.value <= 21:
         while opponent_have.value < 17:
             hit(deck, opponent_have)
-        show_card(player_have, opponent_have)    
-        points = {}
-        points[player_have.value] = 21 - player_have.value
-        points[opponent_have.value] = 21 - opponent_have.value
-        if points[player_have.value] > points[opponent_have.value]:
-            player_lose(player_have, opponent_have, player_bet)
-        elif points[player_have.value] == points[opponent_have.value]:
-            Tie(player_have, opponent_have)
+        show_card(player_have, opponent_have)     
+        if opponent_have.value > 21:
+            opponent_lose(player_have , opponent_have, player_bet)       
+        elif player_have.value > opponent_have.value:
+            player_win(player_have, opponent_have, player_bet)
+        elif player_have.value < opponent_have.value:
+            opponent_win(player_have, opponent_have)
         else:
-            player_win(player_have, opponent_have, player_bet)    
+            Tie(player_have, opponent_have)    
     
     print("\nPlayer's winnings stand at", player_bet.total)
 
