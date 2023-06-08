@@ -4,12 +4,12 @@ OBJECTIVE :
 To design and implement a Python program that simulates a game of BLACKJACK. The python code allows the user/player to play the game against a computer controlled opponent/dealer. The primary goal of this program is to create an interactive and user friendly game that provides an enjoyable experience for the user while all the rules of the game are represented.
  
 STEPS OF THE ENTIRE PROCESS:
- a. design a code to represent the deck of cards and implement functions to initialize and shuffle the cards.
- b. Secondly, distribute two cards each to the player as well as the opponent. Also one of the opponent’s cards should be face down or hidden , while all the           player’s cards are known.
- c. Write a function to calculate the value of the cards one has, ranging from 1 to 13.
- d. Next, write a code that would allow the player/user to HIT or STAND. Additionally implement a logic for the opponent such that it automatically determines        whether to hit or stand based on the total value of the cards that they have. The opponent has to keep on taking cards until they have a value of 17 or            higher.
- e. Furthermore,  design a code that would compare the values of both the player and the opponent and finally would determine the result. 
- f. Finally ,we allow the player to play multiple rounds providing them an option whether to restart another game or quit the game.
+ 1. design a code to represent the deck of cards and implement functions to initialize and shuffle the cards.
+ 2. Secondly, distribute two cards each to the player as well as the opponent. Also one of the opponent’s cards should be face down or hidden , while all the           player’s cards are known.
+ 3. Write a function to calculate the value of the cards one has, ranging from 1 to 13.
+ 4. Next, write a code that would allow the player/user to HIT or STAND. Additionally implement a logic for the opponent such that it automatically determines        whether to hit or stand based on the total value of the cards that they have. The opponent has to keep on taking cards until they have a value of 17 or            higher.
+ 5. Furthermore,  design a code that would compare the values of both the player and the opponent and finally would determine the result. 
+ 6. Finally ,we allow the player to play multiple rounds providing them an option whether to restart another game or quit the game.
 
 PROJECT GOALS AND SCOPE:
 1. Functional Gameplay: The main aim is to create a game that is fully functional that accurately represents the rules and the mechanisms of Blackjack. Players should be allowed to play multiple rounds, make decisions as to hit or stand and experience the flow of a real life Blackjack game.
