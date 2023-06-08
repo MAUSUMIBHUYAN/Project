@@ -28,13 +28,13 @@ LESSONS LEARNED:
 3. Understanding various algorithms and game logic.
 
 MEMBERS AND THEIR ACCOUNTS:
-Mausumi Bhuyan (122201001) : https://github.com/MAUSUMIBHUYAN
-Pranitha Muluguru(112201004) : https://github.com/PranithaMuluguru 
-Anjitha Vinod (132201001) : https://github.com/AnjithaVinod
+1. Mausumi Bhuyan (122201001) : https://github.com/MAUSUMIBHUYAN
+2. Pranitha Muluguru(112201004) : https://github.com/PranithaMuluguru 
+3. Anjitha Vinod (132201001) : https://github.com/AnjithaVinod
 
 LINKS TO THE FILES:
-https://github.com/MAUSUMIBHUYAN/Project/blob/main/design.py
-https://github.com/MAUSUMIBHUYAN/Project/blob/main/card_design.py
+1. https://github.com/MAUSUMIBHUYAN/Project/blob/main/design.py
+2. https://github.com/MAUSUMIBHUYAN/Project/blob/main/card_design.py
 
 
 
