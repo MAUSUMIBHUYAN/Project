@@ -13,8 +13,8 @@ STEPS OF THE ENTIRE PROCESS:
 
 PROJECT GOALS AND SCOPE:
 1. Functional Gameplay: The main aim is to create a game that is fully functional that accurately represents the rules and the mechanisms of Blackjack. Players should be allowed to play multiple rounds, make decisions as to hit or stand and experience the flow of a real life Blackjack game.
-2.User interface: Implement a user friendly interface that would display the game state as well as the players and opponents values and scores and prompts for players actions. The interface should provide clear instructions for players' understanding and enjoyment of the game.
-3.Score calculation and scoring:Implement score calculations that are accurate and correctly calculate the values of each card both the opponent and the player has. The game should  correctly determine the winner.
+2. User interface: Implement a user friendly interface that would display the game state as well as the players and opponents values and scores and prompts for players actions. The interface should provide clear instructions for players' understanding and enjoyment of the game.
+3. Score calculation and scoring:Implement score calculations that are accurate and correctly calculate the values of each card both the opponent and the player has. The game should  correctly determine the winner.
 4. Multiple rounds: Allow players to play multiple rounds of Blackjack , tracking their wins and losses.
 
 TOOLS USED:
