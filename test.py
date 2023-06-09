@@ -200,7 +200,7 @@ while True:
         elif player_have.value > opponent_have.value:
             player_win(player_have, opponent_have, player_bet)
         elif player_have.value < opponent_have.value:
-            opponent_win(player_have, opponent_have)
+            opponent_win(player_have, opponent_have, player_bet)
         else:
             Tie(player_have, opponent_have)    
     
